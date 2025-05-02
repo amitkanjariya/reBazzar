@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "224522118943",
+    "firebase_url": "https://rebazaar-app-default-rtdb.firebaseio.com",
+    "project_id": "rebazaar-app",
+    "storage_bucket": "rebazaar-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224522118943:android:7b2da8d06a35f6cf73322a",
+        "android_client_info": {
+          "package_name": "com.example.rebazaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224522118943-b1delv945kgjrjbu63gng6o8669o9l3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rebazaar",
+            "certificate_hash": "5aa0709624fdc56caf9b7daa2cc36ec84029cbc8"
+          }
+        },
+        {
+          "client_id": "224522118943-rjgsfrgq6l5stnjdsmbth1nl6845ti3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyISr0XVDDkiasfE46ZBEFQPdR6WAcxBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224522118943-rjgsfrgq6l5stnjdsmbth1nl6845ti3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
