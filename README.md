@@ -23,7 +23,6 @@
 ## Tech Stack
 
 - **Language**: Kotlin
-- **Architecture**: ViewBinding
 - **Firebase Services**: Auth, Realtime Database, Analytics
 - **Other Libraries**:
   - Glide (Image Loading)
