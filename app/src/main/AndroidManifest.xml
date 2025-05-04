@@ -11,11 +11,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" /> <!-- Write to external storage (only needed below Android 10) -->
+        android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28" />
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -27,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rebazaar"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.AdSellerProfileActivity"
             android:exported="false" />

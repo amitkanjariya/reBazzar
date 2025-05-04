@@ -12,7 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.io.File
 import java.io.FileOutputStream
+import java.util.Arrays
 import java.util.Calendar
+import java.util.Locale
 
 /**
  * General utility methods and constants.
@@ -20,6 +22,8 @@ import java.util.Calendar
 object Utils {
     const val AD_STATUS_AVAILABLE = "AVAILABLE"
     const val AD_STATUS_SOLD = "SOLD"
+    const val MESSAGE_TYPE_TEXT = "TEXT"
+    const val MESSAGE_TYPE_IMAGE = "IMAGE"
 
     val categories = arrayOf(
         "All", "Mobiles", "Computer/Laptop", "Electronics & Home Appliances", "Vehicles", "Furniture & Home Decor",
@@ -61,10 +65,17 @@ object Utils {
      * Format a timestamp (ms) into dd/MM/yyyy string.
      */
     fun formatTimestampDate(timestamp: Long): String {
-        val calendar = Calendar.getInstance()
+        val calendar = Calendar.getInstance(Locale.ENGLISH)
         calendar.timeInMillis = timestamp
         return DateFormat.format("dd/MM/yyyy", calendar).toString()
     }
+
+    fun formatTimestampDateTime(timestamp: Long): String {
+        val calendar = Calendar.getInstance(Locale.ENGLISH)
+        calendar.timeInMillis = timestamp
+        return DateFormat.format("dd/MM/yyyy hh:mm:a", calendar).toString()
+    }
+
 
     /**
      * Convert a Uri into a local file path by copying its content into a temp file.
@@ -99,6 +110,12 @@ object Utils {
             }
         }
         return name
+    }
+
+    fun chatPath(recepitUid : String, yourUid: String) : String {
+        val arrayUids = arrayOf(recepitUid, yourUid)
+        Arrays.sort(arrayUids)
+        return "${arrayUids[0]}_${arrayUids[1]}"
     }
 
     fun addToFavorite(context: Context, adId: String){

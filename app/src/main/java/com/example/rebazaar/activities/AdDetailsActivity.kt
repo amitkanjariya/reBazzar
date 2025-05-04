@@ -91,7 +91,9 @@ class AdDetailsActivity : AppCompatActivity() {
         }
 
         binding.chatBtn.setOnClickListener{
-
+            val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("receiptUid", sellerUid)
+            startActivity(intent)
         }
 
         binding.callBtn.setOnClickListener{
