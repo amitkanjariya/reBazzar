@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/toolbarTitleTv"
             android:text="Amit Kanjariya"
+            android:layout_marginHorizontal="10dp"
             android:layout_centerInParent="true"
             style="@style/TextAppearance.MaterialComponents.Body1"
             />
@@ -52,13 +53,13 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chatRv"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/row_chat_right"
+        android:layout_above="@id/chatInputRl"
         android:layout_below="@id/toolbarRl"
-        android:layout_above="@id/view1"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_chat_right" />
 
     <View
         android:layout_width="match_parent"
@@ -77,7 +78,7 @@
         >
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
             android:id="@+id/messageEt"
             android:inputType="textMultiLine|textCapSentences"
             android:padding="10dp"
@@ -88,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/attachFab"
+            android:layout_marginHorizontal="5dp"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/sendFab"
             android:src="@drawable/ic_image_gray"

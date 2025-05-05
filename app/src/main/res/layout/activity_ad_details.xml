@@ -221,26 +221,11 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/sellerNameTv"
                         android:text="Amit Kanjariya"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
                         android:layout_toEndOf="@id/sellerProfileIv"
                         style="@style/TextAppearance.MaterialComponents.Body1"
                         />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/memberSinceLabelTv"
-                        android:text="Member Since"
-                        android:layout_below="@id/sellerNameTv"
-                        android:layout_toEndOf="@id/sellerProfileIv"
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/memberSinceTv"
-                        android:text="dd/MM/yyyy"
-                        android:layout_below="@id/sellerNameTv"
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_toEndOf="@id/memberSinceLabelTv"/>
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
@@ -251,7 +236,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/optionsLl"
         android:orientation="horizontal"
-        android:padding="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignParentBottom="true"
         >
         <com.google.android.material.button.MaterialButton
@@ -259,8 +245,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chatBtn"
             android:layout_weight="1"
-            android:layout_marginEnd="2dp"
-            android:textSize="10sp"
+            android:textSize="15sp"
             android:text="Chat"
             app:cornerRadius="8dp"
             app:icon="@drawable/round_chat_white"
@@ -270,34 +255,10 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/callBtn"
-            android:layout_weight="1"
-            android:layout_marginEnd="2dp"
-            android:textSize="10sp"
-            android:text="Call"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/round_call_white"
-            android:minHeight="@dimen/m_button_height"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/smsBtn"
-            android:layout_weight="1"
-            android:layout_marginEnd="2dp"
-            android:textSize="10sp"
-            android:text="SMS"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_sms"
-            android:minHeight="@dimen/m_button_height"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/mapBtn"
             android:layout_weight="1"
-            android:layout_marginEnd="2dp"
-            android:textSize="10sp"
+            android:layout_marginStart="5dp"
+            android:textSize="15sp"
             android:text="Map"
             app:cornerRadius="8dp"
             app:icon="@drawable/ic_location_white"

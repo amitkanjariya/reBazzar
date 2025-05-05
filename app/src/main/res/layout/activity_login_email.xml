@@ -111,26 +111,31 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/noAccountTV"
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:layout_below="@+id/passwordTil"
-            android:layout_marginTop="5dp"
-            android:text="@string/not_have_account_register"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/forgotPasswordTv"
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:text="@string/forgot_password_recover"
             android:layout_below="@id/passwordTil"
-            android:layout_marginTop="5dp"
-            android:layout_alignParentEnd="true"
-            />
+            android:layout_centerHorizontal="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/noAccountTV"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_marginTop="7dp"
+                android:text="@string/not_have_account_register"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/forgotPasswordTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="@string/forgot_password_recover"
+                android:layout_below="@id/noAccountTV"
+                android:layout_marginTop="5dp"
+                />
+        </RelativeLayout>
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

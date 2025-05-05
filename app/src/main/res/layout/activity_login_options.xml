@@ -47,15 +47,6 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/loginPhoneBtn"
-                android:minHeight="@dimen/m_button_height"
-                android:text="Continue With Phone"
-                app:icon="@drawable/round_call_white"
-                app:cornerRadius="8dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 app:icon="@drawable/round_email_white"
                 android:id="@+id/loginEmailBtn"
                 android:minHeight="@dimen/m_button_height"

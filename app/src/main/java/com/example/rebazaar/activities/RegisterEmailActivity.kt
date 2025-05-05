@@ -96,8 +96,6 @@ class RegisterEmailActivity : AppCompatActivity() {
 
         val hashMap = HashMap<String, Any>()
         hashMap["name"] = ""
-        hashMap["phoneCode"] = ""
-        hashMap["phoneNumber"] = ""
         hashMap["profileImageUrl"] = ""
         hashMap["dob"] = ""
         hashMap["userType"] = "Email"

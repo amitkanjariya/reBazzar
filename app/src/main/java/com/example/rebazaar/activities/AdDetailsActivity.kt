@@ -39,9 +39,7 @@ class AdDetailsActivity : AppCompatActivity() {
         Log.d("AD_DETAIL", "0001")
         binding.toolbarEditBtn.visibility = View.GONE
         binding.toolbarDeleteBtn.visibility = View.GONE
-        binding.callBtn.visibility = View.GONE
         binding.chatBtn.visibility = View.GONE
-        binding.smsBtn.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
         adId = intent.getStringExtra("adId").toString()
         Log.d("AD_DETAIL", "onCreate: adId: $adId")
@@ -94,14 +92,6 @@ class AdDetailsActivity : AppCompatActivity() {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("receiptUid", sellerUid)
             startActivity(intent)
-        }
-
-        binding.callBtn.setOnClickListener{
-            Utils.callIntent(this, sellerPhone)
-        }
-
-        binding.smsBtn.setOnClickListener{
-            Utils.smsIntent(this, sellerPhone)
         }
 
         binding.mapBtn.setOnClickListener{
@@ -175,16 +165,12 @@ class AdDetailsActivity : AppCompatActivity() {
                         binding.toolbarEditBtn.visibility=View.VISIBLE
                         binding.toolbarDeleteBtn.visibility=View.VISIBLE
                         binding.chatBtn.visibility=View.GONE
-                        binding.callBtn.visibility=View.GONE
-                        binding.smsBtn.visibility=View.GONE
                         binding.sellerProfileLabelTv.visibility=View.GONE
                         binding.sellerProfileCv.visibility=View.GONE
                     } else{
                         binding.toolbarEditBtn.visibility=View.GONE
                         binding.toolbarDeleteBtn.visibility=View.GONE
                         binding.chatBtn.visibility=View.VISIBLE
-                        binding.callBtn.visibility=View.VISIBLE
-                        binding.smsBtn.visibility=View.VISIBLE
                         binding.sellerProfileLabelTv.visibility=View.VISIBLE
                         binding.sellerProfileCv.visibility=View.VISIBLE
                     }
@@ -213,14 +199,11 @@ class AdDetailsActivity : AppCompatActivity() {
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
-                    val phoneCode = "${snapshot.child("phoneCode").value}"
-                    val phoneNumber = "${snapshot.child("phoneNumber").value}"
                     val name = "${snapshot.child("name").value}"
                     val profileImageUrl = "${snapshot.child("profileImageUrl").value}"
-//                    var timestamp = "${snapshot.child("timestamp").value}"
-//                    val formattedDate = Utils.formatTimestampDate(timestamp.toLong())
+//                    var timestamp = snapshot.child("timestamp").value as Long?: 0
+//                    val formattedDate = Utils.formatTimestampDate(timestamp)
 
-                    sellerPhone="$phoneCode$phoneNumber"
                     binding.sellerNameTv.text=name
 
 //                    binding.memberSinceTv.text=formattedDate

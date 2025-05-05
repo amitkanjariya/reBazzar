@@ -62,16 +62,10 @@
                 android:text="Full Name"
                 android:layout_toEndOf="@id/sellerProfileIv"
                 android:id="@+id/sellerNameTv"
+                android:layout_marginStart="5dp"
+                android:layout_centerVertical="true"
                 style="@style/TextAppearance.MaterialComponents.Body1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/sellerMemberSinceLabelTv"
-                style="@style/TextAppearance.MaterialComponents.Caption"
-                android:text="Member Since: "
-                android:layout_toEndOf="@id/sellerProfileIv"
-                android:layout_below="@id/sellerNameTv"
-                />
+
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
     <View

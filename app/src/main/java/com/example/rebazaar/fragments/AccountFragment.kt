@@ -83,38 +83,33 @@ class AccountFragment : Fragment() {
                     val dob = "${snapshot.child("dob").value}"
                     val email = "${snapshot.child("email").value}"
                     val name = "${snapshot.child("name").value}"
-                    val phoneCode = "${snapshot.child("phoneCode").value}"
-                    val phoneNumber = "${snapshot.child("phoneNumber").value}"
                     val progileImageUrl = "${snapshot.child("profileImageUrl").value}"
                     var timestamp = "${snapshot.child("timestamp").value}"
-                    val userType = "${snapshot.child("uerType").value}"
-
-                    val phone = phoneCode+phoneNumber
-                    if(timestamp=="null"){
-                        timestamp="0"
-                    }
-
-                    val formattedDate = Utils.formatTimestampDate(timestamp.toLong())
-
+                    val userType = "${snapshot.child("userType").value}"
+                    Log.d("VERIFY_EMAIL", "verification email 10 ${userType}")
                     binding.emailTv.text=email
                     binding.nameTv.text=name
                     binding.dobTv.text=dob
-                    binding.phoneTv.text=phone
-                    binding.memberSinceTv.text=formattedDate
 
                     if(userType == "Email"){
-                        val isVerified = firebaseAuth.currentUser!!.isEmailVerified
-                        if(isVerified){
+                        Log.d("VERIFY_EMAIL", "verification email 1")
+                        val isVerified = firebaseAuth.currentUser?.isEmailVerified
+                        Log.d("VERIFY_EMAIL", "verification email 2 isVerified = ${isVerified}")
+                        if(isVerified == true){
+                            Log.d("VERIFY_EMAIL", "verification email 3")
                             binding.verifiyAccountCv.visibility = View.GONE
                             binding.verificationTv.text="Verified"
                         } else{
+                            Log.d("VERIFY_EMAIL", "verification email 4")
                             binding.verifiyAccountCv.visibility = View.VISIBLE
                             binding.verificationTv.text="Not Verified"
                         }
                     } else{
+                        Log.d("VERIFY_EMAIL", "verification email 5")
                         binding.verifiyAccountCv.visibility = View.GONE
                         binding.verificationLabelTv.text="Verified"
                     }
+                    Log.d("VERIFY_EMAIL", "verification email 6")
 
                     try {
                         Glide.with(mContext)

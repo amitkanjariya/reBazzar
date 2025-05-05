@@ -67,32 +67,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/phoneLabelTv"
-            android:text="Phone"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/emailLabelTv"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/phoneTv"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:text="123456"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/emailLabelTv"
-            android:layout_marginTop="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/dobLabelTv"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:text="DOB"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/phoneLabelTv"
+            android:layout_below="@id/emailLabelTv"
             />
 
         <TextView
@@ -102,30 +81,11 @@
             android:text="DD/MM/YYYY"
             android:layout_marginTop="10dp"
             style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_below="@id/phoneLabelTv"
+            android:layout_below="@id/emailLabelTv"
             android:layout_alignParentEnd="true"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/memberSinceLabelTv"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:text="Member Since"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/dobLabelTv"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/memberSinceTv"
-            android:text="DD/MM/YYYY"
-            android:layout_marginTop="10dp"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_below="@id/dobLabelTv"
-            android:layout_alignParentEnd="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,17 +94,17 @@
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:text="Account Status"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/memberSinceLabelTv"
+            android:layout_below="@id/dobLabelTv"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/verificationTv"
-            android:text="Not Verified"
+            android:text="verify or not"
             android:layout_marginTop="10dp"
             style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_below="@id/memberSinceLabelTv"
+            android:layout_below="@id/dobLabelTv"
             android:layout_alignParentEnd="true"
             />
         

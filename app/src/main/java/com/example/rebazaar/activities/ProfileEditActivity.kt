@@ -64,15 +64,11 @@ class ProfileEditActivity : AppCompatActivity() {
     private var name = ""
     private var dob = ""
     private var email = ""
-    private var phoneCode = ""
-    private var phoneNumber = ""
 
     private fun validateData(){
         name = binding.nameEt.text.toString().trim()
         dob = binding.dobEt.text.toString().trim()
         email = binding.emailEt.text.toString().trim()
-        phoneNumber = binding.phoneNumberEt.text.toString().trim()
-        phoneCode = binding.countryCodePicker.selectedCountryCodeWithPlus
         if(imageUri == null){
             updateProfileDb(null)
         } else{
@@ -119,9 +115,6 @@ class ProfileEditActivity : AppCompatActivity() {
         }
         if(myUserType.equals("Phone", true)){
             hashMap["email"] = "$email"
-        } else if(myUserType.equals("Email", true) || myUserType.equals("Google", true)){
-            hashMap["phoneCode"] = "$phoneCode"
-            hashMap["phoneNumber"] = "$phoneNumber"
         }
 
         val reference = FirebaseDatabase.getInstance().getReference("Users")
@@ -149,32 +142,17 @@ class ProfileEditActivity : AppCompatActivity() {
                     val dob = "${snapshot.child("dob").value}"
                     val email = "${snapshot.child("email").value}"
                     val name = "${snapshot.child("name").value}"
-                    val phoneCode = "${snapshot.child("phoneCode").value}"
-                    val phoneNumber = "${snapshot.child("phoneNumber").value}"
                     val progileImageUrl = "${snapshot.child("profileImageUrl").value}"
                     var timestamp = "${snapshot.child("timestamp").value}"
                     myUserType = "${snapshot.child("uerType").value}"
 
-                    val phone = phoneCode+phoneNumber
                     if(myUserType.equals("Email", true) || myUserType.equals("Google", true)){
                         binding.emailTil.isEnabled = false
                         binding.emailTil.isEnabled = false
-                    } else{
-                        binding.phoneNumberTil.isEnabled = false
-                        binding.phoneNumberEt.isEnabled=false
-                        binding.countryCodePicker.isEnabled=false
                     }
                     binding.emailEt.setText(email)
                     binding.dobEt.setText(dob)
                     binding.nameEt.setText(name)
-                    binding.phoneNumberEt.setText(phoneNumber)
-
-                    try {
-                        val phoneCodeInt = phoneCode.replace("+", "").toInt()
-                        binding.countryCodePicker.setCountryForPhoneCode(phoneCodeInt)
-                    } catch (e : Exception){
-                        Log.e(TAG, "onDataChange: ", e)
-                    }
 
                     try {
                         Glide.with(this@ProfileEditActivity)
